@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <p>Lorem ipsum, dolor sit amet consectetur
+             adipisicing elit. Voluptates dicta quo nesciunt provident, consequatur alias reprehenderit nisi quidem cumque perspiciatis.</p>
+        <div><button class="btn1">change color</button></div>
+
+        <div>
+          <span>  change font size</span> <button class="plus">+</button> <button class="mins">-</button>
+        </div>
+    </div>
+
+    <script>
+        let btn=document.querySelectorAll("button");
+        let contaer=document.querySelector(".container")
+        let pp=document.querySelector("p")
+        let bakcolor=["red","yellow","orange","gray","grey"]
+        let colorpp=["white","black"]
+        let i=0
+        let idexcolor=0;
+
+        btn[0].onclick=()=>{
+        
+          contaer.style.backgroundColor=bakcolor[i++];
+          contaer.style.color=colorpp[idexcolor++]
+           if (i > bakcolor.length)
+           {
+            i=0;
+           }
+           if(idexcolor>colorpp.length -1){
+            idexcolor=0;
+           }
+        }
+   
+       let font=18
+      
+        btn[1].onclick=()=>{
+        pp.style.fontSize=(font +=3) + "px";
+        }
+        btn[2].onclick=()=>{
+        pp.style.fontSize= (font -=3)+ "px";
+        }
+    </script>
+</body>
+</html>
